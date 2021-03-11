@@ -50,6 +50,6 @@ function carregarusuario(){
         "<h4> " + userjson.nome + "(" + userjson.id + ") <br>" + userjson.email + "</h4>";
 
         document.getElementById("foto").innerHTML = 
-        "<img width='200px' height='200px'  alt='Foto do usuário' src=imagens/" + userjson.foto + ">";
+        "<img width='200px' height='200px'  alt='Foto do usuário' src=../Imagens/" + userjson.foto + ">";
     }
 }
