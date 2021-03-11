@@ -1,0 +1,36 @@
+/* Criando tipos de estilos para comandos do HTML5*/
+
+body {
+    background-color: rgb(250, 233, 178);
+}
+
+p {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(25, 23, 47);
+}
+
+h1 {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(25, 23, 47);
+}
+
+.frase {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(25, 23, 47);
+}
+
+
+/* criando classes para BootStrap */
+
+legend {
+    font-size: 12px;
+    font-weight: bolder;
+    color: black;
+    text-align: left;
+}
