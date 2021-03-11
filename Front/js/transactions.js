@@ -1,8 +1,7 @@
 function carregarParceiro(){
     var parceiro = localStorage.getItem("parceiro");
     
-    if(parceiro ==
-         null){
+    if(parceiro == null){
         window.location="agentesParceiros.html";
     }
     else {
@@ -10,18 +9,14 @@ function carregarParceiro(){
         var parceiroJson = JSON.parse(parceiro);
 
         var cabecalho = {
-            method: "POST",
-            body: JSON.stringify(userjson),
-            headers: {
-                "Content-type": "application/json"
-            }
+            method: "GET"
         }
 
-        fetch("http://localhost:8080/parceiro/" + parceiroJson.id, cabecalho)
+        fetch("http://localhost:8080/agente/" + parceiroJson.id, cabecalho)
         .then(res => res.json())
         .then(res => {
             // Preencher o card de parceiro
-            
+            document.getElementById("parceiro").innerHTML = res.nomeAgente + " / " + res.volumeTransacional
         })
         .catch(err => {
             window.alert("Não foi possível obter as informações desejadas");
@@ -29,18 +24,5 @@ function carregarParceiro(){
 
 
         // Obter as infos dos dashs
-
-
-
-
-
-
-
-        
-        document.getElementById("dados").innerHTML = 
-        "<h4> " + parceiroJson.nome + "(" + userjson.id + ") <br>" + parceiroJson.email + "</h4>";
-
-        document.getElementById("foto").innerHTML = 
-        "<img width='200px' height='200px'  alt='Foto do usuário' src=../Imagens/" + userjson.foto + ">";
     }
 }
