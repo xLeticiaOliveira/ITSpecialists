@@ -1,3 +1,3 @@
 # ITSpecialists
 
-Backend do projeto final do curso GAMA do grupo IT Specialists
+Projeto final do curso GAMA do grupo IT Specialists
