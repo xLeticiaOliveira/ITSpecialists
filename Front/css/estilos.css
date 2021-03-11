@@ -1,7 +1,7 @@
 /* Criando tipos de estilos para comandos do HTML5*/
 
 body {
-    background-color: rgb(250, 233, 178);
+    background-color:#f8f9fa;
 }
 
 p {
@@ -27,10 +27,10 @@ h1 {
 
 
 /* criando classes para BootStrap */
+.navbar{
+    background-color: #ffad31!important;
+}
 
-legend {
-    font-size: 12px;
-    font-weight: bolder;
-    color: black;
-    text-align: left;
+.text-navbar{
+    color:#f8f9fa!important;
 }
