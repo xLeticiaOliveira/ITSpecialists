@@ -22,45 +22,50 @@
 
 </head>
 
-<body background-color=(255,250,250)>
-    <CENTER>
-        <FORM name="login">
-            <TABLE cellPadding=10 border=0>
-                <TBODY>
-                    <TR>
-                        <TD colSpan=2>
-                            <CENTER>
-                                <FONT face=verdana color=#696969 size=1><img src="../Imagens/DashCard.png">
-                                </FONT>
-                            </CENTER>
-                        </TD>
-                    </TR>
-                    <TR>
-                        <TD>
-                            <FONT face="verdana" color="#000000" size=1><img src="../Imagens/usuario.PNG">
-                            </FONT>
-                        </TD>
-                        <TD>
-                            <INPUT name="username" type="nome/email" placeholder="Racf ou E-mail" id="username">
-                        </TD>
-                    </TR>
-                    <TR>
-                        <TD>
-                            <FONT face="verdana" color="#000000" size=1><img src="../Imagens/senha.PNG"></FONT>
-                        </TD>
-                        <TD>
-                            <INPUT type="password" name="password" placeholder="senha" id="password">
-                        </TD>
-                    </TR>
-                    <TR>
-                        <TD align=middle colSpan=2>
-                                <INPUT onclick="logar()" type="button" value="SignIN"!>
-                        </TD>
-                    </TR>
-                </TBODY>
-            </TABLE>
-        </FORM>
-    </CENTER>
-    </FONT>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height: 100vh;" >
+            <div class="col-8 p-0 h-100" style="background-color:#313131;">
+                <img src="../Imagens/newwallp.png" alt="Plano de fundo inicial" style='height: 100%; width: 100%; object-fit: contain'>
+            </div>
+            <div class="col-4 p-5 shadow " style="background-color:rgb(255,114,0);">
+                <div class="row d-flex justify-content-center">
+                    <img src="../Imagens/logoitau.png" alt="Logo Itaú" class="align-self-center" style='height: 120px; width: 120px;''>
+                </div>
+                <br><br>
+                <div class="row py-2 px-3 mx-4 login-form">
+                        <form class="w-100">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Username:</label>
+                              <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+                              <small id="emailHelp" class="form-text text-muted">Você pode logar com email ou racf.</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Password:</label>
+                              <input type="password" class="form-control" id="password">
+                            </div>
+                            <center>
+                                <button type="button" onclick="logar()" class="btn btn-login" id="btn-login">Login</button>
+                            </center>
+                          </form>
+                </div> 
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+// Adicionando o listener para o enter no password
+document.getElementById("password").addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("btn-login").click();
+  }
+});
+</script>
 
 </html>

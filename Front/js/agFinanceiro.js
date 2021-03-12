@@ -4,7 +4,7 @@ function carregarAgentes(){
     .then(res => res.json())
     .then( res => {
         // Colocar os dados na combo box
-        var cmbAgentes="";
+        var cmbAgentes="<option disabled selected value> -- Selecione uma opção -- </option>";
         for(contador=0; contador<res.length; contador++){
             cmbAgentes += "<option value='" + res[contador].idAgente + "'>" + res[contador].nomeAgente +"</option>";
         }
@@ -12,19 +12,23 @@ function carregarAgentes(){
 
         // Colocar os dados na tabela
         var tabela=
-        "<table border='1' align='center'>" 
+        "<thead class='thead-light'>" 
         +"<tr>" 
-        +"<th> Parceiro </th>"
-        +"<th> Volume Transacional </th>"
-        +"</tr>";
+        +"<th scope='col'> # </th>"
+        +"<th scope='col'> Parceiro </th>"
+        +"<th scope='col'> Volume Transacional </th>"
+        +"</tr>"
+        + "</thead>";
+        tabela += "<tbody>";
         for(contador = 0; contador<res.length; contador++){
             tabela +=
-            "<tr>" + 
+            "<tr scope='row'>" + 
+            "<td>" + (contador+1) + "</td>" +
             "<td>" + res[contador].nomeAgente + "</td>" +
             "<td>" + res[contador].volumeTransacional + "</td>" +
             "</tr>"
         }
-        tabela += "</table>";
+        tabela += "</tbody>";
         document.getElementById("tabela").innerHTML = tabela;
     });
 }

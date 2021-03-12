@@ -38,18 +38,28 @@ function logar(){
         });
 }
 
-function carregarusuario(){
+function verificarObterUsuario(){
     var user = localStorage.getItem("userlogado");
-    if(user ==
-         null){
+    if(user == null){
         window.location="index.html";
     }
-    else {
-        var userjson = JSON.parse(user);
-        document.getElementById("dados").innerHTML = 
-        "<h4> " + userjson.nome + "(" + userjson.id + ") <br>" + userjson.email + "</h4>";
-
-        document.getElementById("foto").innerHTML = 
-        "<img width='200px' height='200px'  alt='Foto do usuário' src=../Imagens/" + userjson.foto + ">";
+    else{
+        return user;
     }
+}
+
+function carregarusuario(){
+    var user = verificarObterUsuario();
+    var userjson = JSON.parse(user);
+    document.getElementById("dados").innerHTML = 
+    "<h4> " + userjson.nome + " (" + userjson.racf + ") <br>" + userjson.email + "</h4>";
+
+    document.getElementById("foto").innerHTML = 
+    "<img width='100%'  alt='Foto do usuário' src=../Imagens/" + userjson.foto + ">";
+}
+
+
+function logout(){
+    localStorage.removeItem("userlogado")
+    return true;
 }
